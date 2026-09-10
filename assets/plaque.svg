@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+	<title>Anti-Chess salon plaque</title>
+	<desc>Original walnut and ink enamel with restrained brass Art Deco inlays.</desc>
+	<defs>
+		<linearGradient id="walnut" x1="0" y1="0" x2="1" y2="1">
+			<stop stop-color="#45372f"/>
+			<stop offset="0.5" stop-color="#302a2b"/>
+			<stop offset="1" stop-color="#1c2229"/>
+		</linearGradient>
+		<linearGradient id="enamel" x1="0" y1="0" x2="0.8" y2="1">
+			<stop stop-color="#273c35"/>
+			<stop offset="1" stop-color="#14232a"/>
+		</linearGradient>
+	</defs>
+	<rect width="512" height="512" fill="url(#walnut)"/>
+	<g fill="none" stroke="#806047" stroke-opacity="0.2" stroke-width="1.5">
+		<path d="M0 49Q173 31 512 52M0 60Q203 46 512 65M0 451Q213 463 512 450M0 462Q194 478 512 461"/>
+		<path d="M14 0Q26 239 13 512M24 0Q34 244 25 512M487 0Q478 275 487 512M497 0Q489 283 498 512"/>
+	</g>
+	<path d="M66 28H446L484 66V446L446 484H66L28 446V66Z" fill="url(#enamel)" stroke="#b0905b" stroke-width="2"/>
+	<path d="M73 39H439L473 73V439L439 473H73L39 439V73Z" fill="none" stroke="#806d49" stroke-width="1"/>
+	<g fill="none" stroke="#c2a36a" stroke-width="2">
+		<path d="M15 102V53L53 15H102M410 15H459L497 53V102"/>
+		<path d="M15 410V459L53 497H102M410 497H459L497 459V410"/>
+	</g>
+	<g fill="#c4a568">
+		<path d="M256 12L262 18L256 24L250 18ZM256 488L262 494L256 500L250 494Z"/>
+		<path d="M18 250L24 256L18 262L12 256ZM494 250L500 256L494 262L488 256Z"/>
+	</g>
+</svg>

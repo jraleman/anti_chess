@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/boot/intro.tscn" id="1_intro"]
+
+[node name="AntiChessIntro" instance=ExtResource("1_intro")]
+cards = Array[String](["The king is not the prize.", "If you can take, you must.", "Lose every piece. Win the game."])
+fade_in = 0.4
+hold = 1.8
+fade_out = 0.3
+next_scene = "res://scenes/menus/main_menu.tscn"
+
+[node name="Card" parent="Frame/Layout/CardHolder" index="0"]
+theme_override_colors/font_color = Color(1, 0.941176, 0.827451, 1)
+
+[node name="Hint" parent="Frame/Layout/Bottom" index="0"]
+theme_override_colors/font_color = Color(0.72549, 0.776471, 0.733333, 1)
+theme_override_font_sizes/font_size = 18
+autowrap_mode = 3
+
+[node name="SkipButton" parent="Frame/Layout/Bottom" index="1"]
+focus_mode = 2
+custom_minimum_size = Vector2(104, 56)
+tooltip_text = "Skip the opening and go to the main menu."
+
+[node name="ProgressFill" parent="Progress" index="1"]
+color = Color(0.909804, 0.741176, 0.447059, 0.85)

@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="768" height="768" viewBox="0 0 768 768">
+	<title>Anti-Chess</title>
+	<desc>An original jade and brass crest: a porcelain king lies across a chessboard beside an ink pawn. Hand-drawn lettering reads ANTI CHESS.</desc>
+	<defs>
+		<linearGradient id="enamel" x1="0" y1="0" x2="1" y2="1">
+			<stop stop-color="#233e39"/>
+			<stop offset="0.55" stop-color="#152826"/>
+			<stop offset="1" stop-color="#101720"/>
+		</linearGradient>
+		<linearGradient id="brass" x1="0" y1="0" x2="1" y2="0.7">
+			<stop stop-color="#9c7743"/>
+			<stop offset="0.42" stop-color="#e8bd72"/>
+			<stop offset="0.68" stop-color="#cfab70"/>
+			<stop offset="1" stop-color="#907044"/>
+		</linearGradient>
+		<linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="0.3">
+			<stop stop-color="#aa9b81"/>
+			<stop offset="0.28" stop-color="#e9dfca"/>
+			<stop offset="0.58" stop-color="#f0e6d2"/>
+			<stop offset="1" stop-color="#c3b499"/>
+		</linearGradient>
+		<linearGradient id="ink" x1="0" y1="0" x2="1" y2="0.3">
+			<stop stop-color="#191b27"/>
+			<stop offset="0.38" stop-color="#5d4654"/>
+			<stop offset="0.65" stop-color="#352d3b"/>
+			<stop offset="1" stop-color="#171c27"/>
+		</linearGradient>
+		<path id="a" d="M2 54L20 4L38 54M9 36H31"/>
+		<path id="n" d="M2 54V4L38 54V4"/>
+		<path id="t" d="M0 4H40M20 4V54"/>
+		<path id="i" d="M8 4H32M20 4V54M8 54H32"/>
+		<path id="c" d="M38 4H16Q2 4 2 18V40Q2 54 16 54H38"/>
+		<path id="h" d="M2 4V54M38 4V54M2 28H38"/>
+		<path id="e" d="M38 4H2V54H38M2 28H31"/>
+		<path id="s" d="M38 4H12Q2 4 2 14V18Q2 28 12 28H28Q38 28 38 38V44Q38 54 28 54H2"/>
+	</defs>
+	<path d="M104 38H664L730 104V664L664 730H104L38 664V104Z" fill="#0e191c" stroke="#92784d" stroke-width="3"/>
+	<path d="M111 54H657L714 111V657L657 714H111L54 657V111Z" fill="url(#enamel)" stroke="url(#brass)" stroke-width="3"/>
+	<path d="M124 73H644L695 124V644L644 695H124L73 644V124Z" fill="none" stroke="#b59b67" stroke-opacity="0.3" stroke-width="1.5"/>
+	<g fill="none" stroke="#a28c5f" stroke-width="2">
+		<path d="M85 211V136L136 85H253M515 85H632L683 136V211"/>
+		<path d="M85 557V632L136 683H253M515 683H632L683 632V557"/>
+	</g>
+	<g fill="url(#brass)">
+		<path d="M384 72L397 85L384 98L371 85Z"/>
+		<path d="M83 376L91 384L83 392L75 384ZM685 376L693 384L685 392L677 384Z"/>
+		<path d="M372 687H396L384 699Z"/>
+	</g>
+	<circle cx="384" cy="271" r="163" fill="#0b1920" fill-opacity="0.3" stroke="#a79564" stroke-opacity="0.22" stroke-width="2"/>
+	<path d="M210 271A174 174 0 0 1 558 271M225 271A159 159 0 0 1 543 271" fill="none" stroke="url(#brass)" stroke-opacity="0.6" stroke-width="2"/>
+	<path d="M199 269V290M569 269V290M384 107V127" stroke="#b59962" stroke-width="3"/>
+	<ellipse cx="387" cy="373" rx="180" ry="40" fill="#080f16" fill-opacity="0.65"/>
+	<path d="M198 320L384 244L570 320V336L384 412L198 336Z" fill="#332a2c" stroke="#927548" stroke-width="2"/>
+	<path d="M198 320L384 396L570 320M384 396V412" fill="none" stroke="#d0aa68" stroke-width="2"/>
+	<g transform="matrix(22 9 -22 9 384 248)">
+		<rect x="-0.16" y="-0.16" width="8.32" height="8.32" fill="#171f25" stroke="#e8bd72" stroke-width="0.04"/>
+		<rect width="8" height="8" fill="#c4bba5"/>
+		<path d="M1 0h1v1h-1zM3 0h1v1h-1zM5 0h1v1h-1zM7 0h1v1h-1zM0 1h1v1H0zM2 1h1v1H2zM4 1h1v1H4zM6 1h1v1H6zM1 2h1v1H1zM3 2h1v1H3zM5 2h1v1H5zM7 2h1v1H7zM0 3h1v1H0zM2 3h1v1H2zM4 3h1v1H4zM6 3h1v1H6zM1 4h1v1H1zM3 4h1v1H3zM5 4h1v1H5zM7 4h1v1H7zM0 5h1v1H0zM2 5h1v1H2zM4 5h1v1H4zM6 5h1v1H6zM1 6h1v1H1zM3 6h1v1H3zM5 6h1v1H5zM7 6h1v1H7zM0 7h1v1H0zM2 7h1v1H2zM4 7h1v1H4zM6 7h1v1H6z" fill="#47716a"/>
+	</g>
+	<g transform="translate(273 318)">
+		<ellipse cx="0" cy="8" rx="39" ry="13" fill="#080f16" fill-opacity="0.65"/>
+		<ellipse rx="34" ry="11" fill="none" stroke="#ff6b57" stroke-width="3"/>
+		<path d="M-31-5Q-34-14-25-20L-19-25H19L25-20Q34-14 31-5Z" fill="url(#ink)" stroke="#79636c" stroke-width="1.5"/>
+		<ellipse cy="-25" rx="20" ry="6" fill="#887064"/>
+		<path d="M-20-26Q-9-48-10-68H10Q9-48 20-26Z" fill="url(#ink)" stroke="#79636c" stroke-width="1.5"/>
+		<ellipse cy="-68" rx="16" ry="5" fill="#c2a064"/>
+		<circle cy="-88" r="19" fill="url(#ink)" stroke="#79636c" stroke-width="1.5"/>
+		<path d="M-8-99Q-17-95-14-85" fill="none" stroke="#a08b94" stroke-width="3" stroke-linecap="round"/>
+	</g>
+	<ellipse cx="417" cy="324" rx="98" ry="20" transform="rotate(-21 417 324)" fill="#0b161b" fill-opacity="0.5"/>
+	<g transform="translate(335 337) rotate(62) scale(1.17)">
+		<path d="M-39 0Q-43-6-37-14L-28-21H28L37-14Q43-6 39 0Z" fill="url(#porcelain)" stroke="#8e8069" stroke-width="1.5"/>
+		<ellipse cy="0" rx="39" ry="8" fill="#c4b498"/>
+		<path d="M-36-9Q0 3 36-9" fill="none" stroke="#4da3ff" stroke-width="3"/>
+		<ellipse cy="-22" rx="29" ry="7" fill="url(#brass)"/>
+		<path d="M-26-23L-20-43Q-10-69-12-102H12Q10-69 20-43L26-23Z" fill="url(#porcelain)" stroke="#9c8b70" stroke-width="1.5"/>
+		<path d="M-13-37Q-5-68-7-95" fill="none" stroke="#f4ead8" stroke-opacity="0.65" stroke-width="3"/>
+		<rect x="-23" y="-114" width="46" height="13" rx="4" fill="url(#brass)"/>
+		<path d="M-17-116L-22-139Q0-149 22-139L17-116Z" fill="url(#porcelain)" stroke="#a38d6e" stroke-width="1.5"/>
+		<path d="M-7-180H7V-167H20V-154H7V-143H-7V-154H-20V-167H-7Z" fill="url(#brass)" stroke="#e9c787" stroke-width="1.5"/>
+	</g>
+	<g fill="none" stroke="#a38c5e" stroke-width="2">
+		<path d="M198 444H324M444 444H570"/>
+		<path d="M364 444L384 434L404 444L384 454Z"/>
+	</g>
+	<g transform="translate(232 477) scale(1.4)" fill="none" stroke="#e8bd72" stroke-width="5" stroke-linecap="square" stroke-linejoin="round">
+		<use xlink:href="#a"/>
+		<use xlink:href="#n" x="58"/>
+		<use xlink:href="#t" x="116"/>
+		<use xlink:href="#i" x="174"/>
+	</g>
+	<path d="M204 570H564" stroke="#8b7954" stroke-width="1.5"/>
+	<g transform="translate(180 590) scale(1.5)" fill="none" stroke="#e9dfca" stroke-width="5.5" stroke-linecap="square" stroke-linejoin="round">
+		<use xlink:href="#c"/>
+		<use xlink:href="#h" x="58"/>
+		<use xlink:href="#e" x="116"/>
+		<use xlink:href="#s" x="174"/>
+		<use xlink:href="#s" x="232"/>
+	</g>
+</svg>

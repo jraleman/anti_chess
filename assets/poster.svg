@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630">
+	<title>ANTI-CHESS - GIVE IT ALL AWAY</title>
+	<desc>Original vector cover art for Anti-Chess. A toppled porcelain king and two pawns rest on an eight-by-eight parchment and jade board, inlaid in walnut and brass. The quiet salon has an Art Deco frame and hand-drawn title lettering.</desc>
+	<defs>
+		<linearGradient id="room" x1="0" y1="0" x2="1" y2="1">
+			<stop stop-color="#213d36"/>
+			<stop offset="0.5" stop-color="#152826"/>
+			<stop offset="1" stop-color="#090f15"/>
+		</linearGradient>
+		<radialGradient id="lamplight" cx="0.76" cy="0.34" r="0.7">
+			<stop stop-color="#c3a770" stop-opacity="0.2"/>
+			<stop offset="0.55" stop-color="#47716a" stop-opacity="0.08"/>
+			<stop offset="1" stop-color="#090f15" stop-opacity="0"/>
+		</radialGradient>
+		<linearGradient id="walnut" x1="0" y1="0" x2="0.8" y2="1">
+			<stop stop-color="#514039"/>
+			<stop offset="0.5" stop-color="#302a2d"/>
+			<stop offset="1" stop-color="#1b2028"/>
+		</linearGradient>
+		<linearGradient id="brass" x1="0" y1="0" x2="1" y2="0.65">
+			<stop stop-color="#937043"/>
+			<stop offset="0.38" stop-color="#e8bd72"/>
+			<stop offset="0.65" stop-color="#f0d299"/>
+			<stop offset="1" stop-color="#a3814c"/>
+		</linearGradient>
+		<linearGradient id="porcelain" x1="0" y1="0" x2="1" y2="0.2">
+			<stop stop-color="#a99c86"/>
+			<stop offset="0.3" stop-color="#e9dfca"/>
+			<stop offset="0.54" stop-color="#fff0d3"/>
+			<stop offset="1" stop-color="#c0b195"/>
+		</linearGradient>
+		<linearGradient id="ink" x1="0" y1="0" x2="1" y2="0.25">
+			<stop stop-color="#141d29"/>
+			<stop offset="0.35" stop-color="#65505f"/>
+			<stop offset="0.6" stop-color="#403140"/>
+			<stop offset="1" stop-color="#191c29"/>
+		</linearGradient>
+		<path id="a" d="M2 54L20 4L38 54M9 36H31"/>
+		<path id="n" d="M2 54V4L38 54V4"/>
+		<path id="t" d="M0 4H40M20 4V54"/>
+		<path id="i" d="M8 4H32M20 4V54M8 54H32"/>
+		<path id="dash" d="M5 28H35"/>
+		<path id="c" d="M38 4H16Q2 4 2 18V40Q2 54 16 54H38"/>
+		<path id="h" d="M2 4V54M38 4V54M2 28H38"/>
+		<path id="e" d="M38 4H2V54H38M2 28H31"/>
+		<path id="s" d="M38 4H12Q2 4 2 14V18Q2 28 12 28H28Q38 28 38 38V44Q38 54 28 54H2"/>
+		<path id="g" d="M38 4H16Q2 4 2 18V40Q2 54 16 54H38V30H24"/>
+		<path id="v" d="M2 4L20 54L38 4"/>
+		<path id="l" d="M2 4V54H38"/>
+		<path id="w" d="M0 4L8 54L20 26L32 54L40 4"/>
+		<path id="y" d="M0 4L20 29L40 4M20 29V54"/>
+	</defs>
+	<rect width="1200" height="630" fill="url(#room)"/>
+	<rect width="1200" height="630" fill="url(#lamplight)"/>
+	<g fill="none" stroke="#9a885c" stroke-opacity="0.19" stroke-width="1.5">
+		<path d="M610 332V256A285 285 0 0 1 1180 256V445"/>
+		<path d="M628 329V256A267 267 0 0 1 1162 256V424"/>
+		<path d="M646 327V256A249 249 0 0 1 1144 256V403"/>
+		<path d="M895 20V70M875 25V55M915 25V55"/>
+	</g>
+	<path d="M47 24H1153L1176 47V583L1153 606H47L24 583V47Z" fill="none" stroke="#9d8454" stroke-opacity="0.55" stroke-width="1.5"/>
+	<path d="M40 150V54L54 40H150M1050 40H1146L1160 54V150M40 480V576L54 590H150M1050 590H1146L1160 576V480" fill="none" stroke="#bc9a61" stroke-opacity="0.55" stroke-width="2"/>
+	<path d="M79 83H232M264 83H417" stroke="#b59b68" stroke-opacity="0.65" stroke-width="2"/>
+	<path d="M248 75L256 83L248 91L240 83Z" fill="#e8bd72"/>
+	<g transform="translate(77 126) scale(1.45)" fill="none" stroke="#e8bd72" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="square">
+		<use xlink:href="#a"/>
+		<use xlink:href="#n" x="58"/>
+		<use xlink:href="#t" x="116"/>
+		<use xlink:href="#i" x="174"/>
+		<use xlink:href="#dash" x="232"/>
+	</g>
+	<g transform="translate(77 236) scale(1.45)" fill="none" stroke="#fff0d3" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="square">
+		<use xlink:href="#c"/>
+		<use xlink:href="#h" x="58"/>
+		<use xlink:href="#e" x="116"/>
+		<use xlink:href="#s" x="174"/>
+		<use xlink:href="#s" x="232"/>
+	</g>
+	<g transform="translate(78 365) scale(0.48)" fill="none" stroke="#e9dfca" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="square">
+		<use xlink:href="#g"/>
+		<use xlink:href="#i" x="54"/>
+		<use xlink:href="#v" x="108"/>
+		<use xlink:href="#e" x="162"/>
+		<use xlink:href="#i" x="246"/>
+		<use xlink:href="#t" x="300"/>
+		<use xlink:href="#a" x="384"/>
+		<use xlink:href="#l" x="438"/>
+		<use xlink:href="#l" x="492"/>
+		<use xlink:href="#a" x="576"/>
+		<use xlink:href="#w" x="630"/>
+		<use xlink:href="#a" x="684"/>
+		<use xlink:href="#y" x="738"/>
+	</g>
+	<path d="M78 429H238M252 429H320" stroke="#b39a69" stroke-opacity="0.5" stroke-width="2"/>
+	<path d="M355 424L360 429L355 434L350 429Z" fill="#b39a69"/>
+	<ellipse cx="836" cy="502" rx="332" ry="89" fill="#060c12" fill-opacity="0.17"/>
+	<ellipse cx="836" cy="502" rx="315" ry="74" fill="#060c12" fill-opacity="0.22"/>
+	<ellipse cx="837" cy="499" rx="283" ry="62" fill="#060c12" fill-opacity="0.32"/>
+	<path d="M496 403.84L890.24 547.2V569.2L496 425.84Z" fill="url(#walnut)" stroke="#1a1a22" stroke-width="1.5"/>
+	<path d="M890.24 547.2L1168 332.16V354.16L890.24 569.2Z" fill="#24232a" stroke="#161a22" stroke-width="1.5"/>
+	<path d="M501 414L890.24 557.2L1163 345" fill="none" stroke="#ad8b50" stroke-width="2"/>
+	<path d="M517 423L880 555M519 429L823 539" stroke="#806048" stroke-opacity="0.34" stroke-width="1.2"/>
+	<g transform="matrix(44 16 -31 24 780 208)">
+		<rect x="-0.48" y="-0.48" width="8.96" height="8.96" fill="url(#walnut)" stroke="#a18556" stroke-width="0.035"/>
+		<rect x="-0.32" y="-0.32" width="8.64" height="8.64" fill="none" stroke="#e8bd72" stroke-width="0.035"/>
+		<rect x="-0.12" y="-0.12" width="8.24" height="8.24" fill="#141e24" stroke="#9f8354" stroke-width="0.026"/>
+		<rect width="8" height="8" fill="#e9dfca"/>
+		<path d="M1 0h1v1h-1zM3 0h1v1h-1zM5 0h1v1h-1zM7 0h1v1h-1zM0 1h1v1H0zM2 1h1v1H2zM4 1h1v1H4zM6 1h1v1H6zM1 2h1v1H1zM3 2h1v1H3zM5 2h1v1H5zM7 2h1v1H7zM0 3h1v1H0zM2 3h1v1H2zM4 3h1v1H4zM6 3h1v1H6zM1 4h1v1H1zM3 4h1v1H3zM5 4h1v1H5zM7 4h1v1H7zM0 5h1v1H0zM2 5h1v1H2zM4 5h1v1H4zM6 5h1v1H6zM1 6h1v1H1zM3 6h1v1H3zM5 6h1v1H5zM7 6h1v1H7zM0 7h1v1H0zM2 7h1v1H2zM4 7h1v1H4zM6 7h1v1H6z" fill="#47716a"/>
+		<path d="M1 0V8M2 0V8M3 0V8M4 0V8M5 0V8M6 0V8M7 0V8M0 1H8M0 2H8M0 3H8M0 4H8M0 5H8M0 6H8M0 7H8" fill="none" stroke="#fff0d3" stroke-opacity="0.12" stroke-width="0.018"/>
+		<g fill="#e8bd72">
+			<path d="M-0.32-0.42L-0.22-0.32L-0.32-0.22L-0.42-0.32ZM8.32-0.42L8.42-0.32L8.32-0.22L8.22-0.32ZM8.32 8.22L8.42 8.32L8.32 8.42L8.22 8.32ZM-0.32 8.22L-0.22 8.32L-0.32 8.42L-0.42 8.32Z"/>
+		</g>
+	</g>
+	<g transform="translate(997 315) scale(0.9)">
+		<ellipse cx="9" cy="10" rx="44" ry="14" fill="#111c25" fill-opacity="0.35"/>
+		<ellipse rx="36" ry="12" fill="none" stroke="#ff6b57" stroke-width="3"/>
+		<path d="M-32-4Q-36-14-25-22L-20-26H20L25-22Q36-14 32-4Z" fill="url(#ink)" stroke="#806776" stroke-width="1.5"/>
+		<ellipse cy="-26" rx="22" ry="6" fill="url(#brass)"/>
+		<path d="M-20-28Q-9-51-11-70H11Q9-51 20-28Z" fill="url(#ink)" stroke="#806776" stroke-width="1.5"/>
+		<ellipse cy="-70" rx="17" ry="5" fill="#ad9063"/>
+		<circle cy="-92" r="21" fill="url(#ink)" stroke="#927988" stroke-width="1.5"/>
+		<path d="M-9-103Q-18-98-15-89" fill="none" stroke="#b7a0ac" stroke-opacity="0.75" stroke-width="3" stroke-linecap="round"/>
+	</g>
+	<g transform="translate(668 392)">
+		<ellipse cx="11" cy="10" rx="47" ry="15" fill="#142028" fill-opacity="0.3"/>
+		<ellipse rx="37" ry="12" fill="none" stroke="#4da3ff" stroke-width="3"/>
+		<path d="M-33-4Q-36-15-26-22L-21-27H21L26-22Q36-15 33-4Z" fill="url(#porcelain)" stroke="#9f9077" stroke-width="1.5"/>
+		<ellipse cy="-27" rx="23" ry="6" fill="url(#brass)"/>
+		<path d="M-21-28Q-9-49-11-70H11Q9-49 21-28Z" fill="url(#porcelain)" stroke="#a8977c" stroke-width="1.5"/>
+		<ellipse cy="-70" rx="17" ry="5" fill="#cfb37e"/>
+		<circle cy="-91" r="21" fill="url(#porcelain)" stroke="#baaa8e" stroke-width="1.5"/>
+		<path d="M-9-102Q-17-98-15-89" fill="none" stroke="#fff0d3" stroke-width="3" stroke-linecap="round"/>
+	</g>
+	<ellipse cx="913" cy="400" rx="102" ry="22" transform="rotate(-22 913 400)" fill="#17202a" fill-opacity="0.3"/>
+	<g transform="translate(832 429) rotate(62) scale(1.06)">
+		<path d="M-39 0Q-43-6-37-14L-28-21H28L37-14Q43-6 39 0Z" fill="url(#porcelain)" stroke="#948369" stroke-width="1.5"/>
+		<ellipse cy="0" rx="39" ry="8" fill="#cbb999"/>
+		<path d="M-36-9Q0 3 36-9" fill="none" stroke="#4da3ff" stroke-width="3"/>
+		<ellipse cy="-22" rx="29" ry="7" fill="url(#brass)"/>
+		<path d="M-26-23L-20-43Q-10-69-12-102H12Q10-69 20-43L26-23Z" fill="url(#porcelain)" stroke="#a28d6b" stroke-width="1.5"/>
+		<path d="M-13-36Q-5-69-7-95" fill="none" stroke="#fff0d3" stroke-width="3" stroke-linecap="round"/>
+		<rect x="-23" y="-114" width="46" height="13" rx="4" fill="url(#brass)"/>
+		<path d="M-17-116L-22-139Q0-149 22-139L17-116Z" fill="url(#porcelain)" stroke="#ac9470" stroke-width="1.5"/>
+		<path d="M-7-180H7V-167H20V-154H7V-143H-7V-154H-20V-167H-7Z" fill="url(#brass)" stroke="#f0d299" stroke-width="1.5"/>
+	</g>
+	<path d="M1031 499L1050 485M1025 509L1060 482M1045 506L1067 489" fill="none" stroke="#d7b57d" stroke-opacity="0.55" stroke-width="1.5"/>
+</svg>

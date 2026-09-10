@@ -1,0 +1,215 @@
+[gd_resource type="Theme" load_steps=11 format=3]
+
+; Keep the host's padding and typography. Every button state stays dark:
+; a focus overlay must not replace a pressed fill or obscure its lettering.
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_normal"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.105882, 0.188235, 0.184314, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.458824, 0.411765, 0.309804, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hover"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.168627, 0.278431, 0.25098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.909804, 0.741176, 0.447059, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pressed"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.082353, 0.180392, 0.168627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.941176, 0.827451, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_disabled"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.082353, 0.141176, 0.129412, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.329412, 0.360784, 0.317647, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_focus"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.909804, 0.741176, 0.447059, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_normal"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.156863, 0.301961, 0.27451, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.909804, 0.741176, 0.447059, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_hover"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.192157, 0.356863, 0.313725, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.941176, 0.827451, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_primary_pressed"]
+content_margin_left = 32.0
+content_margin_top = 16.0
+content_margin_right = 32.0
+content_margin_bottom = 16.0
+bg_color = Color(0.109804, 0.219608, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.941176, 0.827451, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_panel"]
+content_margin_left = 32.0
+content_margin_top = 28.0
+content_margin_right = 32.0
+content_margin_bottom = 28.0
+bg_color = Color(0.078431, 0.164706, 0.152941, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.458824, 0.411765, 0.309804, 0.55)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toggle_focus"]
+content_margin_left = 10.0
+content_margin_top = 8.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.909804, 0.741176, 0.447059, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[resource]
+Button/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+Button/colors/font_disabled_color = Color(0.678431, 0.729412, 0.690196, 1)
+Button/colors/font_focus_color = Color(1, 0.972549, 0.905882, 1)
+Button/colors/font_hover_color = Color(1, 0.972549, 0.905882, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.941176, 0.827451, 1)
+Button/colors/font_pressed_color = Color(1, 0.941176, 0.827451, 1)
+Button/styles/disabled = SubResource("StyleBoxFlat_disabled")
+Button/styles/focus = SubResource("StyleBoxFlat_focus")
+Button/styles/hover = SubResource("StyleBoxFlat_hover")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_pressed")
+Button/styles/normal = SubResource("StyleBoxFlat_normal")
+Button/styles/pressed = SubResource("StyleBoxFlat_pressed")
+CheckButton/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+CheckButton/colors/font_disabled_color = Color(0.678431, 0.729412, 0.690196, 1)
+CheckButton/colors/font_focus_color = Color(1, 0.972549, 0.905882, 1)
+CheckButton/colors/font_hover_color = Color(1, 0.972549, 0.905882, 1)
+CheckButton/colors/font_hover_pressed_color = Color(1, 0.941176, 0.827451, 1)
+CheckButton/colors/font_pressed_color = Color(1, 0.941176, 0.827451, 1)
+CheckButton/styles/focus = SubResource("StyleBoxFlat_toggle_focus")
+Label/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+LineEdit/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+LineEdit/colors/caret_color = Color(0.909804, 0.741176, 0.447059, 1)
+LineEdit/styles/focus = SubResource("StyleBoxFlat_focus")
+MenuHeading/base_type = &"Label"
+MenuHeading/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+MenuSectionHeading/base_type = &"Label"
+MenuSectionHeading/colors/font_color = Color(0.909804, 0.741176, 0.447059, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_panel")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_panel")
+PopupMenu/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+PopupMenu/colors/font_hover_color = Color(1, 0.972549, 0.905882, 1)
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_panel")
+PrimaryButton/base_type = &"Button"
+PrimaryButton/colors/font_color = Color(1, 0.941176, 0.827451, 1)
+PrimaryButton/colors/font_disabled_color = Color(0.678431, 0.729412, 0.690196, 1)
+PrimaryButton/colors/font_focus_color = Color(1, 0.972549, 0.905882, 1)
+PrimaryButton/colors/font_hover_color = Color(1, 0.972549, 0.905882, 1)
+PrimaryButton/colors/font_hover_pressed_color = Color(1, 0.941176, 0.827451, 1)
+PrimaryButton/colors/font_pressed_color = Color(1, 0.941176, 0.827451, 1)
+PrimaryButton/styles/disabled = SubResource("StyleBoxFlat_disabled")
+PrimaryButton/styles/focus = SubResource("StyleBoxFlat_focus")
+PrimaryButton/styles/hover = SubResource("StyleBoxFlat_primary_hover")
+PrimaryButton/styles/hover_pressed = SubResource("StyleBoxFlat_primary_pressed")
+PrimaryButton/styles/normal = SubResource("StyleBoxFlat_primary_normal")
+PrimaryButton/styles/pressed = SubResource("StyleBoxFlat_primary_pressed")
+PrimaryMenuButton/base_type = &"PrimaryButton"
+RichTextLabel/colors/default_color = Color(1, 0.941176, 0.827451, 1)
+TabBar/colors/font_unselected_color = Color(0.72549, 0.776471, 0.733333, 1)
+TabContainer/colors/font_unselected_color = Color(0.72549, 0.776471, 0.733333, 1)

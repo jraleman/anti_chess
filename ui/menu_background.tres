@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+
+[ext_resource type="Shader" path="res://games/anti_chess/ui/menu_background.gdshader" id="1_shader"]
+
+[resource]
+shader = ExtResource("1_shader")
+shader_parameter/top_color = Color(0.082353, 0.156863, 0.14902, 1)
+shader_parameter/bottom_color = Color(0.035294, 0.058824, 0.082353, 1)
+shader_parameter/glow_color = Color(0.909804, 0.741176, 0.447059, 1)
+shader_parameter/aspect = Vector2(1, 1)
+shader_parameter/speed = 0.06
