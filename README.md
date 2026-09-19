@@ -74,6 +74,8 @@ spells out a compulsory capture. White/Black names, optional P1/P2 labels,
 different piece materials, player-colour base rings and optional P/N/B/R/Q/K
 badges supplement the silhouettes. The ledger records coordinate notation,
 promotions and en passant. The board remains visible above the ledger in portrait.
+White pieces have one player-colour base ring and Black pieces have two, so
+equipping matching finishes never removes the physical side markings.
 
 Settings offers three CPU levels: **Casual**, **Thoughtful** and **Cunning**.
 The latter two search replies using a bounded, incremental losing-chess search;
@@ -97,16 +99,52 @@ stay with P1; the artwork's White/Black piece counts remain explicitly labelled.
 Their QR links
 to the studio website, not an invented stats service.
 
+## Piece colours and store
+
+Open **Store** from the standalone title screen or the shared pause menu.
+Classic, Ivory, Ink, Jade, Ruby and Sapphire are owned from the start.
+Equip a finish independently for **P1 / You** and **P2 / CPU**. In solo your
+finish follows you when you choose Black; locally P1 is White and P2 is Black.
+Choices apply **next match**, including replay, not halfway through a move.
+Classic preserves the original ivory/ink pair.
+
+Completed matches earn **10 Coins + 2 per piece given away** (the human's
+score in solo; the higher score in local play). Beating the CPU adds **15 Coins**,
+including a blocked-position win. Draws and resignations retain the completion
+and giveaway rewards; abandoning a match earns nothing. Payouts are capped at
+60 Coins; giving away all 16 pieces and beating the CPU pays 57.
+
+| Finish | Coins | Appearance |
+| --- | ---: | --- |
+| Bronze | 60 | Warm, softly polished metal |
+| Silver | 120 | Cool, brushed highlights |
+| Gold | 200 | Rich golden polish |
+| Platinum | 320 | Pale, high-polish metal |
+| Diamond | 500 | Opaque ice-blue, gem-cut facets |
+
+Buy each finish once and use it on either or both players. The shared `Store`
+owns the per-game wallet, purchases and equipped slots in `user://store.cfg`;
+there is no parallel shop or save system. The results screen reports earned
+Coins. Store portraits reuse the actual match meshes and materials and remain
+still under all motion settings.
+
+The six original models have finer turned bases and collars, a bevelled knight
+with paired ears and a carved mane, an open diagonal bishop mitre, six rook
+merlons, an eight-point queen's crown and a bevelled king's cross. Finishes
+cover the pieces, not just their rings, and also follow promotions and captured
+pieces into the trays. Everything remains opaque and Compatibility-renderer safe.
+
 ## Source and assets
 
 | Path | Responsibility |
 | --- | --- |
-| `game.gd`, `anti_chess_options.gd` | Manifest, standalone identity, copy and constants-only settings |
+| `game.gd`, `anti_chess_options.gd` | Manifest, identity, copy, constants-only settings and store catalogue |
 | `board/chess_state.gd`, `board/cpu_player.gd` | Node-free rules and seeded CPU; no autoload access |
 | `board/chess_mesh.gd` | Original lathed/constructed chessmen and batched table geometry |
 | `board/board_view.gd`, `board/chess_camera.gd` | Read-only 3D world, batched pieces, captured-piece trays and mode-specific camera |
 | `ui/board_input.gd` | Plane-based picking and native-resolution, focusable board overlay |
 | `ui/match_panel.gd`, `ui/match_dialog.gd` | Turn briefing, scrollable ledger and explicit decisions |
+| `ui/piece_preview.gd`, `ui/piece_preview.tscn` | Still 3D finish portraits for the shared Store cards |
 | `gameplay.gd`, `gameplay.tscn` | Inherited shell integration and match lifecycle |
 | `assets`, `ui/menu_*`, `intro.tscn` | Original vector identity, menu resources and opening |
 | `tools/render_audio.gd` | Offline authoring of four original PCM cues, with no external samples |
@@ -121,7 +159,7 @@ shadows**, measured by the graphical regression.
 
 The instructions screen selects the solo or local walkthrough and its matching
 poster. The game picker uses the solo clip. These are muted, captioned Theora
-videos in the host's `assets\video` folder; reduced motion parks them on a still.
+videos in this game's own `assets\video` folder; reduced motion parks them on a still.
 Lessons show the actual controls, compulsory captures, ordinary kings, promotion
 and giving away the last piece. Small teaching positions are explicitly labelled
 as practice positions, rather than making pieces disappear without explanation.
@@ -150,6 +188,8 @@ Run the existing Godot `SceneTree` test style, sequentially:
 ```powershell
 godot --headless --path ..\.. --script res://games/anti_chess/tests/chess_state_test.gd -- --game=all
 godot --headless --path ..\.. --script res://games/anti_chess/tests/cpu_player_test.gd -- --game=all
+godot --headless --path ..\.. --script res://games/anti_chess/tests/chess_mesh_test.gd -- --game=all
+godot --headless --path ..\.. --script res://games/anti_chess/tests/piece_store_test.gd -- --game=all
 godot --headless --path ..\.. --script res://games/anti_chess/tests/anti_chess_scene_test.gd -- --game=all
 godot --headless --path ..\.. --script res://games/anti_chess/tests/anti_chess_setup_test.gd -- --game=all
 godot --headless --path ..\.. --script res://games/anti_chess/tests/tutorial_driver_test.gd -- --game=all
@@ -159,13 +199,14 @@ godot --audio-driver Dummy --path ..\.. --script res://games/anti_chess/tests/bo
 The last command requires a graphics window; headless output is not visual coverage.
 Add `--anti-chess-capture-dir=<absolute directory>` after `--` to save landscape,
 portrait, wide, both solo colours, orbit/pan, compulsory-capture, promotion,
-results, scorecard and title-screen images.
-The scene fixture suppresses achievement/progression writes and restores settings.
+results, scorecard, every finish, store and title-screen images.
+The scene fixture suppresses achievement/progression and wallet writes.
+The store suite restores the original wallet file and settings after exercising purchases.
 Run shared framework coverage with an isolated user profile: some host tests
 deliberately complete real rounds and exercise persistence.
 
 Affected shared coverage includes `game_shell_test.gd`, `lives_mode_test.gd`,
 `game_options_test.gd`, `custom_keys_test.gd`, `instructions_video_test.gd`,
-`game_select_test.gd`, and
+`game_select_test.gd`, `store_test.gd`, and
 `single_game_test.gd`. The last also runs with `--game=anti_chess` to exercise
 the actual standalone launch.

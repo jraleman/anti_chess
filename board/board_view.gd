@@ -19,6 +19,7 @@ var _pieces: Array[Dictionary] = []
 var _batches: Array[MultiMesh] = []
 var _piece_faces: Array[PackedVector3Array] = []
 var _piece_colors: Array[Color] = []
+var _piece_finishes: Array[String] = []
 var _given: Array[int] = [0, 0]
 var _move_clock := MOVE_SECONDS
 var _built := false
@@ -49,10 +50,13 @@ func _process(delta: float) -> void:
 
 
 ## Reuses meshes between matches and removes every previous capture/animation.
-func reset(state: State, colors: Array[Color]) -> void:
+func reset(
+	state: State, colors: Array[Color],
+	finishes: Array[String] = [ChessMesh.Options.FINISH_CLASSIC, ChessMesh.Options.FINISH_CLASSIC]
+) -> void:
 	if not _built:
 		_build_world()
-	_rebuild_piece_meshes(colors)
+	_rebuild_piece_meshes(colors, finishes)
 	_pieces.clear()
 	_given = [0, 0]
 	_move_clock = MOVE_SECONDS
@@ -293,7 +297,6 @@ func _build_world() -> void:
 		batch.instance_count = 16
 		batch.visible_instance_count = 0
 		instance.multimesh = batch
-		instance.material_override = _material
 		_batches.append(batch)
 		_piece_faces.append(PackedVector3Array())
 		add_child(instance)
@@ -329,14 +332,16 @@ func _build_world() -> void:
 	camera.current = true
 
 
-func _rebuild_piece_meshes(colors: Array[Color]) -> void:
+func _rebuild_piece_meshes(colors: Array[Color], finishes: Array[String]) -> void:
 	for side in 2:
 		for kind in range(State.PAWN, State.KING + 1):
 			var batch := _batches[side * 6 + kind - 1]
-			if batch.mesh == null or _piece_colors != colors:
-				batch.mesh = ChessMesh.piece(kind, side, colors[side])
+			if batch.mesh == null or _piece_colors != colors or _piece_finishes != finishes:
+				batch.mesh = ChessMesh.piece(kind, side, colors[side], finishes[side])
+				batch.mesh.surface_set_material(0, ChessMesh.piece_material(finishes[side]))
 				_piece_faces[side * 6 + kind - 1] = batch.mesh.get_faces()
 	_piece_colors = colors.duplicate()
+	_piece_finishes = finishes.duplicate()
 
 
 func _upload_pieces() -> void:
@@ -360,4 +365,3 @@ func _piece_basis(kind: int, side: int, scale_factor: float) -> Basis:
 	if kind == State.KNIGHT:
 		yaw = PI * 0.5 if side == State.WHITE else -PI * 0.5
 	return Basis(Vector3.UP, yaw).scaled(Vector3.ONE * scale_factor)
-

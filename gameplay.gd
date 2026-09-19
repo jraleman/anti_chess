@@ -23,6 +23,7 @@ var _cpu_wait := 0.0
 var _difficulty := Options.DEFAULT_CPU_DIFFICULTY
 var _show_hints := true
 var _piece_labels := true
+var _piece_finishes: Array[String] = [Options.FINISH_CLASSIC, Options.FINISH_CLASSIC]
 var _selected := -1
 var _cursor := 12
 var _keyboard_cursor := false
@@ -81,6 +82,8 @@ func _load_round_settings() -> void:
 	_difficulty = Settings.tunable_choice(Options.CPU_DIFFICULTY_KEY)
 	_show_hints = Settings.tunable_bool(Options.SHOW_HINTS_KEY)
 	_piece_labels = Settings.tunable_bool(Options.PIECE_LABELS_KEY)
+	for player in 2:
+		_piece_finishes[player] = Store.equipped_id(game_id(), Options.FINISH_SLOTS[player])
 
 
 func _prepare_session() -> void:
@@ -175,7 +178,7 @@ func _reset_round_state() -> void:
 	_last_move_text = "White moves first."
 	_legal = _state.legal_moves()
 	_view.configure_camera(not _cpu_enabled, _human_side)
-	_view.reset(_state, _side_colors())
+	_view.reset(_state, _side_colors(), _side_finishes())
 	_present_position()
 
 
@@ -574,6 +577,13 @@ func _side_colors() -> Array[Color]:
 	]
 
 
+func _side_finishes() -> Array[String]:
+	return [
+		_piece_finishes[_player_for_side(State.WHITE)],
+		_piece_finishes[_player_for_side(State.BLACK)],
+	]
+
+
 func _configure_mode_ui() -> void:
 	super()
 	_player_one_card.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
@@ -761,6 +771,18 @@ func _award_round_achievements(_one: int, _two: int) -> void:
 
 func _record_round(one: int, two: int) -> String:
 	return super(one, two) if _state.finished else ""
+
+
+func _round_points_earned(one: int, two: int) -> int:
+	if _state == null or not _state.finished:
+		return 0
+	var given := clampi(one if _cpu_enabled else maxi(one, two), 0, 16)
+	var coins := int(Options.STORE_CURRENCY["round_bonus"])
+	coins += roundi(given * float(Options.STORE_CURRENCY["points_per_score"]))
+	# A blocked player can win with more pieces left: score is not the winner.
+	if _cpu_enabled and _state.winner == _human_side:
+		coins += int(Options.STORE_CURRENCY["win_bonus"])
+	return mini(coins, int(Options.STORE_CURRENCY["max_per_round"]))
 
 
 func _set_reduced_motion_enabled(value: bool) -> void:

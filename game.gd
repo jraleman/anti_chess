@@ -16,10 +16,16 @@ static func manifest() -> GameManifest:
 	game.menu_order = 4
 	game.gameplay_scene_path = "res://games/anti_chess/gameplay.tscn"
 	game.intro_scene_path = "res://games/anti_chess/intro.tscn"
-	game.tutorial_video_path = "res://assets/video/tutorial_anti_chess.ogv"
-	game.local_tutorial_video_path = "res://assets/video/tutorial_anti_chess_local.ogv"
-	game.tutorial_poster_path = "res://assets/video/tutorial_anti_chess_poster.webp"
-	game.local_tutorial_poster_path = "res://assets/video/tutorial_anti_chess_local_poster.webp"
+	game.tutorial_video_path = "res://games/anti_chess/assets/video/tutorial.ogv"
+	game.local_tutorial_video_path = (
+		"res://games/anti_chess/assets/video/tutorial_local.ogv"
+	)
+	game.tutorial_poster_path = (
+		"res://games/anti_chess/assets/video/tutorial_poster.webp"
+	)
+	game.local_tutorial_poster_path = (
+		"res://games/anti_chess/assets/video/tutorial_local_poster.webp"
+	)
 	game.share_art_scene_path = "res://games/anti_chess/ui/share_art.tscn"
 	game.share_art_style = GAME_ID
 	game.stats_url = "https://deskcansaw.com"
@@ -34,6 +40,10 @@ static func manifest() -> GameManifest:
 	game.tunables = OPTIONS.TUNABLES
 	game.control_bindings = OPTIONS.CONTROL_BINDINGS
 	game.solo_setup_choices = [OPTIONS.PLAYER_SIDE_KEY]
+	game.store_currency = OPTIONS.STORE_CURRENCY
+	game.store_slots = OPTIONS.STORE_SLOTS
+	game.store_items = OPTIONS.STORE_ITEMS
+	game.store_preview_scene_path = "res://games/anti_chess/ui/piece_preview.tscn"
 
 	var controls := (
 		"Click or tap a piece, then its destination, or use the shared "
@@ -56,6 +66,13 @@ static func manifest() -> GameManifest:
 		+ "whenever a capture is available. There is no match clock."
 	)
 	game.copy = {
+		"store_intro": (
+			"Finish a match for 10 Coins, plus 2 per piece given away "
+			+ "(your score in solo; the higher score in local play). "
+			+ "Beat the CPU for 15 more. Starter colours are free; "
+			+ "buy each precious finish once for either seat. Applies next match. "
+			+ "White has one base ring; Black has two, whatever their finish."
+		),
 		"mode_select_intro": "One chessboard. A different way to win.",
 		"mode_select_hint": (
 			"Single player lets you choose White or Black before the match. "

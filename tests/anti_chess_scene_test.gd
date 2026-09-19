@@ -138,7 +138,7 @@ func _position(game: Node, pieces: Dictionary, turn := State.WHITE, ep := -1) ->
 	game.set("_cpu_scheduled", false)
 	(game.get("_cpu") as RefCounted).call("cancel")
 	var colors: Array[Color] = game.call("_side_colors")
-	(game.get("_view") as Node).call("reset", state, colors)
+	(game.get("_view") as Node).call("reset", state, colors, game.call("_side_finishes"))
 	game.call("_sync_match_scores")
 	game.call("_present_position")
 	game.call("_update_scores")

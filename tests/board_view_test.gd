@@ -88,6 +88,8 @@ func _run() -> void:
 	await _capture("local-panned")
 	view.call("reset_camera")
 	await _render_frames()
+	await _test_piece_finishes()
+	_game.call("_on_play_again_pressed")
 	_play(12, 28)
 	_play(51, 35)
 	_game.call("_on_square_pressed", 28)
@@ -135,6 +137,7 @@ func _run() -> void:
 	GameCatalog.restrict_to(Options.GAME_ID)
 	get_root().theme = GameCatalog.theme().restyle(ThemeDB.get_project_theme())
 	await _test_setup_views(settings)
+	await _test_store_views()
 	var menu := (load("res://scenes/menus/main_menu.tscn") as PackedScene).instantiate()
 	get_root().add_child(menu)
 	await _render_frames()
@@ -165,6 +168,69 @@ func _render_frames() -> void:
 	for frame in 4:
 		await process_frame
 	await RenderingServer.frame_post_draw
+
+
+func _test_piece_finishes() -> void:
+	var view := _game.get("_view") as Node
+	var state: State = _game.get("_state")
+	var colors: Array[Color] = _game.call("_side_colors")
+	view.call("configure_camera", false, State.WHITE)
+	for item in Options.STORE_ITEMS:
+		var id := str(item["id"])
+		var finishes: Array[String] = [id, id]
+		view.call("reset", state, colors, finishes)
+		view.call("drag_camera", Vector2(-80, -40))
+		await _render_frames()
+		_test_board_geometry()
+		await _capture("finish-" + id)
+		var batches: Array = view.get("_batches")
+		for index in batches.size():
+			var instance := view.get_node("Chessmen%d" % index) as MultiMeshInstance3D
+			var mesh := (batches[index] as MultiMesh).mesh
+			var material := mesh.surface_get_material(0) as StandardMaterial3D
+			_expect(instance.material_override == null and material != null
+				and is_equal_approx(material.metallic, float(item.get("metallic", 0.0))),
+				"Every visible piece must use %s's material, not the table's override." % id)
+
+
+func _test_store_views() -> void:
+	var store := (load("res://scenes/menus/store.tscn") as PackedScene).instantiate()
+	store.set("game_context_id", Options.GAME_ID)
+	get_root().add_child(store)
+	var cards: Array = store.get("_cards")
+	_expect(cards.size() == Options.STORE_ITEMS.size(),
+		"The rendered store must list every piece finish.")
+	var scroll := store.get_node("Margins/Layout/Scroll") as ScrollContainer
+	for size in [Vector2i(1280, 720), Vector2i(390, 844)]:
+		get_root().size = size
+		scroll.scroll_vertical = 0
+		await _render_frames()
+		await _capture("store-starters-%dx%d" % [size.x, size.y])
+		var screen := get_root().get_visible_rect()
+		_expect(screen.encloses((store.get_node("%BackButton") as Control).get_global_rect()),
+			"The store Back action must remain on-screen.")
+		_expect(scroll.size.y > screen.size.y * 0.25,
+			"The store's explanatory copy must leave room to browse on a phone.")
+		for card: StoreItemCard in cards:
+			var preview := card.get("_preview_instance") as Control
+			_expect(preview != null, "Each store card must show the real chess models.")
+			if preview == null:
+				continue
+			var viewport := preview.get("_viewport") as SubViewport
+			_expect(viewport != null and viewport.own_world_3d,
+				"Store portraits must use isolated 3D viewports.")
+			for model: MeshInstance3D in preview.get("_models"):
+				_expect(model.mesh != null and model.material_override != null,
+					"A finish preview must draw an actual, finished piece.")
+			_expect(card.size.x <= scroll.size.x + 1.0,
+				"Finish cards must not overflow the phone's scrolling shelf.")
+		scroll.ensure_control_visible(cards[6])
+		await _render_frames()
+		await _capture("store-precious-%dx%d" % [size.x, size.y])
+	store.queue_free()
+	await process_frame
+	get_root().size = Vector2i(1280, 720)
+	await _render_frames()
 
 
 func _test_setup_views(settings: Node) -> void:
@@ -288,7 +354,7 @@ func _position(pieces: Dictionary, turn: int) -> void:
 	_game.set("_legal", state.legal_moves())
 	_game.set("_selected", -1)
 	var colors: Array[Color] = _game.call("_side_colors")
-	(_game.get("_view") as Node).call("reset", state, colors)
+	(_game.get("_view") as Node).call("reset", state, colors, _game.call("_side_finishes"))
 	_game.call("_sync_match_scores")
 	_game.call("_present_position")
 

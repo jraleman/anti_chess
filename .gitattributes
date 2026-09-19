@@ -1,0 +1,56 @@
+# Line endings and diff behaviour for the Anti-Chess repository.
+#
+# A nested repository keeps its own attributes: neither the DCS Games
+# superproject's .gitattributes nor godot-base's reaches in here, so this is a
+# local copy of the same policy. Godot writes LF; pinning eol=lf keeps a
+# Windows checkout from disagreeing with the editor.
+#
+# Unlike the other game repositories, this one was committed from a Windows
+# checkout with core.autocrlf=true, so 35 of its text blobs were stored CRLF.
+# Adopting this file renormalizes them to LF in the index; the working tree is
+# left alone, because the clean filter strips CR on the way in and a file
+# sitting CRLF on disk keeps reading as unmodified until it is next written.
+
+# Normalize EOL for everything Git detects as text.
+* text=auto eol=lf
+
+# --- Godot source formats -------------------------------------------------
+# Declared explicitly so a file that opens with an unlucky byte run is never
+# misdetected as binary and silently skipped by normalization and diffs.
+*.gd        text eol=lf
+*.gdshader  text eol=lf
+*.gdshaderinc text eol=lf
+*.tscn      text eol=lf
+*.tres      text eol=lf
+*.cfg       text eol=lf
+*.import    text eol=lf
+*.uid       text eol=lf
+*.svg       text eol=lf
+
+# --- Other text in the tree ----------------------------------------------
+*.md        text eol=lf
+*.py        text eol=lf
+*.ps1       text eol=lf
+*.json      text eol=lf
+
+# Windows batch files are parsed by cmd.exe, which needs CRLF.
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+
+# --- Binary assets --------------------------------------------------------
+# `binary` is Git's shorthand for `-text -diff`: never normalize, never try to
+# produce a textual diff. Audio, video and images here are authored artifacts.
+*.ogv       binary
+*.ogg       binary
+*.wav       binary
+*.mp3       binary
+*.png       binary
+*.webp      binary
+*.jpg       binary
+*.jpeg      binary
+*.ttf       binary
+*.otf       binary
+*.pck       binary
+*.apk       binary
+*.aab       binary
+*.zip       binary

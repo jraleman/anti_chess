@@ -20,6 +20,104 @@ const DEFAULT_PLAYER_SIDE := PLAYER_WHITE
 const DEFAULT_SHOW_HINTS := true
 const DEFAULT_PIECE_LABELS := true
 
+const FINISH_CLASSIC := "chess_classic"
+const FINISH_BRONZE := "chess_bronze"
+const FINISH_SILVER := "chess_silver"
+const FINISH_GOLD := "chess_gold"
+const FINISH_PLATINUM := "chess_platinum"
+const FINISH_DIAMOND := "chess_diamond"
+const FINISH_SLOTS: Array[String] = ["chess_finish_p1", "chess_finish_p2"]
+const STORE_CURRENCY := {
+	"name": "Coin",
+	"plural": "Coins",
+	"points_per_score": 2.0,
+	"round_bonus": 10,
+	"win_bonus": 15,
+	"max_per_round": 60,
+}
+const STORE_SLOTS: Array[Dictionary] = [
+	{
+		"id": FINISH_SLOTS[0], "kind": "piece_finish", "title": "P1 / You",
+		"description": "Your pieces in solo, or White's pieces in local play. Next match.",
+	},
+	{
+		"id": FINISH_SLOTS[1], "kind": "piece_finish", "title": "P2 / CPU",
+		"description": "The CPU's pieces in solo, or Black's pieces in local play. Next match.",
+	},
+]
+
+## The first default dresses both seats; the other defaults are owned starter colours.
+## Material fields are game-owned; the shared store only handles price and ownership.
+const STORE_ITEMS: Array[Dictionary] = [
+	{
+		"id": FINISH_CLASSIC, "kind": "piece_finish", "title": "Classic",
+		"description": "Ivory for White, ink for Black. The original two-tone set.",
+		"price": 0, "default": true, "badge": "CLASSIC",
+		"color": Color("d6c7ad"), "heading": "Starter colours",
+	},
+	{
+		"id": "chess_ivory", "kind": "piece_finish", "title": "Ivory",
+		"description": "Warm, polished ivory for either player's whole set.",
+		"price": 0, "default": true, "badge": "IVORY",
+		"color": Color("e5d7bb"), "heading": "Starter colours",
+	},
+	{
+		"id": "chess_ink", "kind": "piece_finish", "title": "Ink",
+		"description": "Deep violet-black lacquer with a satin sheen.",
+		"price": 0, "default": true, "badge": "INK",
+		"color": Color("51415e"), "heading": "Starter colours",
+	},
+	{
+		"id": "chess_jade", "kind": "piece_finish", "title": "Jade",
+		"description": "A cool green glaze, inspired by the salon's chess table.",
+		"price": 0, "default": true, "badge": "JADE",
+		"color": Color("429b80"), "heading": "Starter colours",
+	},
+	{
+		"id": "chess_ruby", "kind": "piece_finish", "title": "Ruby",
+		"description": "Rich red lacquer with the same readable player-colour rings.",
+		"price": 0, "default": true, "badge": "RUBY",
+		"color": Color("b9435b"), "heading": "Starter colours",
+	},
+	{
+		"id": "chess_sapphire", "kind": "piece_finish", "title": "Sapphire",
+		"description": "A royal blue glaze for your knights and their court.",
+		"price": 0, "default": true, "badge": "BLUE",
+		"color": Color("457fc7"), "heading": "Starter colours",
+	},
+	{
+		"id": FINISH_BRONZE, "kind": "piece_finish", "title": "Bronze",
+		"description": "Warm cast bronze, polished along the turned edges.",
+		"price": 60, "badge": "BRONZE", "color": Color("b97943"),
+		"metallic": 0.65, "roughness": 0.32, "heading": "Precious finishes",
+	},
+	{
+		"id": FINISH_SILVER, "kind": "piece_finish", "title": "Silver",
+		"description": "Cool silver with bright, softly brushed highlights.",
+		"price": 120, "badge": "SILVER", "color": Color("b9c5d2"),
+		"metallic": 0.75, "roughness": 0.27, "heading": "Precious finishes",
+	},
+	{
+		"id": FINISH_GOLD, "kind": "piece_finish", "title": "Gold",
+		"description": "A golden court. Bought once, wearable by either player.",
+		"price": 200, "badge": "GOLD", "color": Color("e5b653"),
+		"metallic": 0.78, "roughness": 0.23, "heading": "Precious finishes",
+	},
+	{
+		"id": FINISH_PLATINUM, "kind": "piece_finish", "title": "Platinum",
+		"description": "Pale, lustrous platinum with a crisp polished finish.",
+		"price": 320, "badge": "PLAT", "color": Color("deebe7"),
+		"metallic": 0.8, "roughness": 0.18, "heading": "Precious finishes",
+	},
+	{
+		"id": FINISH_DIAMOND, "kind": "piece_finish", "title": "Diamond",
+		"description": "Ice-blue, gem-cut facets. A solid finish, never an invisible piece.",
+		"price": 500, "badge": "GEM", "color": Color("a9e1f2"),
+		"metallic": 0.3, "roughness": 0.14, "faceted": true,
+		"heading": "Precious finishes",
+	},
+]
+
 const CURSOR_UP_KEY := "controls/anti_chess_up"
 const CURSOR_DOWN_KEY := "controls/anti_chess_down"
 const CURSOR_LEFT_KEY := "controls/anti_chess_left"

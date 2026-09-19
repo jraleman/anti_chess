@@ -546,7 +546,7 @@ func _install_practice_position(
 		_fail(scene, "Anti-Chess tutorial could not read the live BoardView.")
 		return
 	view.call("configure_camera", top_down, home_side)
-	view.call("reset", state, scene.call("_side_colors"))
+	view.call("reset", state, scene.call("_side_colors"), scene.call("_side_finishes"))
 	scene.call("_sync_match_scores")
 	scene.call("_present_position")
 	scene.call("_update_scores")
